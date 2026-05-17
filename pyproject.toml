@@ -1,0 +1,38 @@
+[project]
+name = "nashpobench2real-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "yoichii", email = "reg.hirose@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastparquet>=2026.5.0",
+    "numpy>=2.4.5",
+    "pandas>=3.0.3",
+    "scikit-learn>=1.8.0",
+    "torch>=2.12.0",
+    "xgboost>=3.2.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "nashpobench2api"
+
+[dependency-groups]
+bench = [
+    "configspace>=1.2.1",
+    "tqdm>=4.67.1",
+    "pygmo>=2.19.5",
+    "pyro4>=4.82",
+    "statsmodels>=0.14.6",
+    "pydoe2>=1.3.0",
+]
+dev = [
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.13",
+]

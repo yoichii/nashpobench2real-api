@@ -84,7 +84,7 @@ class API:
     ):
         base_path = Path(__file__).parent
         if model_dir is None:
-            model_dir = base_path / ".apidata"
+            model_dir = base_path / "apidata"
         if inference_log_dir is None:
             inference_log_dir = base_path / "onnx_log"
 
@@ -345,7 +345,7 @@ class API:
 
     def _load_inference_data(self):
         base_path = Path(__file__).parent
-        inference_data_path = base_path / ".apidata" / "onnx_combined_data.parquet"
+        inference_data_path = base_path / "apidata" / "onnx_combined_data.parquet"
 
         if not inference_data_path.exists():
             raise FileNotFoundError(
